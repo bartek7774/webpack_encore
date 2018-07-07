@@ -1,7 +1,14 @@
-@width: 10px;
-@height: @width + 10px;
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
 
-#header {
-  width: @width;
-  height: @height;
+#menu a {
+  color: #111;
+  .bordered();
+}
+
+.post a {
+  color: red;
+  .bordered();
 }

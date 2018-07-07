@@ -1,14 +1,14 @@
-{# base.twig #}
+{# layout.twig #}
 <!DOCTYPE html>
 <html>
     <head>
           {% block stylesheets %}
-                <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+                <link rel="stylesheet" href='/build/app.css'>
           {% endblock stylesheets %}
           <title>{% block title %}{% endblock %} - My Webpage</title>
     </head>
     <body>
-        <h2>Mojasd</h2>
+        <h2>Homepage</h2>
         <div id="content">{% block content %}{% endblock %}</div>
         <div id="footer">
             {% block footer %}
@@ -16,7 +16,7 @@
             {% endblock %}
         </div>
          {% block javascripts %}
-            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="/build/app.js"></script>
          {% endblock javascripts %}
     </body>
 </html>
