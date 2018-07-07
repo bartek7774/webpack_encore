@@ -1,0 +1,21 @@
+{# base.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+          {% block stylesheets %}
+                <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+          {% endblock stylesheets %}
+          <title>{% block title %}{% endblock %} - My Webpage</title>
+    </head>
+    <body>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyright 2018 by Me</a>.
+            {% endblock %}
+        </div>
+         {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+         {% endblock javascripts %}
+    </body>
+</html>
