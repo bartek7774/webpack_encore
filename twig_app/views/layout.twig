@@ -2,21 +2,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-          {% block stylesheets %}
-                <link rel="stylesheet" href='/build/app.css'>
-          {% endblock stylesheets %}
-          <title>{% block title %}{% endblock %} - My Webpage</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href='/build/vendor.css'>
+        {% endblock stylesheets %}
+        <title>
+            {% block title %}{% endblock %}
+            - My Webpage</title>
     </head>
     <body>
         <h2>Homepage</h2>
-        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
         <div id="footer">
             {% block footer %}
                 &copy; Copyright 2018 by Me</a>.
-            {% endblock %}
-        </div>
-         {% block javascripts %}
-            <script src="/build/app.js"></script>
-         {% endblock javascripts %}
-    </body>
+        {% endblock %}
+    </div>
+    {% block javascripts %}
+        <script src="/build/manifest.js"></script>
+        <script src="/build/vendor.js"></script>
+    {% endblock javascripts %}
+</body>
 </html>

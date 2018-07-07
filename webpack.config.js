@@ -1,35 +1,38 @@
 // webpack.config.js
-var Encore = require('@symfony/webpack-encore');
+var Encore = require("@symfony/webpack-encore");
 
 Encore
-    // the project directory where all compiled assets will be stored
-    .setOutputPath('twig_app/public/build')
+  // the project directory where all compiled assets will be stored
+  .setOutputPath("twig_app/public/build")
 
-    // the public path used by the web server to access the previous directory
-    .setPublicPath('/build')
+  // the public path used by the web server to access the previous directory
+  .setPublicPath("/build")
 
-    // will create public/build/app.js and public/build/app.css
-    .addEntry('app', './assets/js/app.js')
+  .createSharedEntry("vendor", [
+    "bootstrap",
+    "bootstrap/less/bootstrap.less"
+  ])
+  // will create public/build/app.js and public/build/app.css
+  .addEntry("app", "./assets/js/app.js")
 
-    // allow legacy applications to use $/jQuery as a global variable
-    .autoProvidejQuery()
+  // allow legacy applications to use $/jQuery as a global variable
+  .autoProvidejQuery()
 
-    // enable source maps during development
-    .enableSourceMaps(!Encore.isProduction())
+  // enable source maps during development
+  .enableSourceMaps(!Encore.isProduction())
 
-    // empty the outputPath dir before each build
-    .cleanupOutputBeforeBuild()
+  // empty the outputPath dir before each build
+  .cleanupOutputBeforeBuild()
 
-    // show OS notifications when builds finish/fail
-    .enableBuildNotifications()
+  // show OS notifications when builds finish/fail
+  .enableBuildNotifications()
 
-    // create hashed filenames (e.g. app.abc123.css)
-    // .enableVersioning()
+  // create hashed filenames (e.g. app.abc123.css)
+  // .enableVersioning()
 
-    // allow sass/scss files to be processed
-    // .enableSassLoader()
-    .enableLessLoader()
-;
+  // allow sass/scss files to be processed
+  // .enableSassLoader()
+  .enableLessLoader();
 
 // export the final configuration
 module.exports = Encore.getWebpackConfig();

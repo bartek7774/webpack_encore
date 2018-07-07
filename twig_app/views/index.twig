@@ -1,24 +1,60 @@
 {% extends 'layout.twig' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}{{title}}
+{% endblock %}
 {% block head %}
     {{ parent() }}
     <style type="text/css">
-        .important { color: #336699; }
+        .important {
+            color: #336699;
+        }
     </style>
 {% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <link rel="stylesheet" href='/build/app.css'>
+{% endblock stylesheets %}
 {% block content %}
-    <p>Welcome to {{title}}</p>
 
-{% set users = [{username:'fabian'},{username: 'olex'},{username: 'iwona'}] %}
-<h1>Members</h1>
-<ul>
-    {% for user in users %}
-        <li>{{ user.username|e }}</li>
-    {% endfor %}
-</ul>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+    <p>Welcome to
+        {{title}}</p>
+
+    {% set users = [
+        {
+            username: 'fabian'
+        }, {
+            username: 'olex'
+        }, {
+            username: 'iwona'
+        }
+    ] %}
+    <h1>Members</h1>
+    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente totam nobis commodi, tenetur, in aperiam quisquam omnis at cupiditate expedita recusandae nisi veniam repudiandae rem maiores consequatur similique sunt! Enim cupiditate nulla nostrum maxime a debitis voluptates dolorem ea. Maiores minima voluptatibus explicabo velit optio doloribus beatae ex non.</p>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username|e }}</li>
+        {% endfor %}
+    </ul>
 
     <p class="important">
         Welcome to my awesome homepage.
     </p>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script src="/build/app.js"></script>
 {% endblock %}
