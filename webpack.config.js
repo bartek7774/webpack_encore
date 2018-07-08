@@ -10,10 +10,10 @@ Encore
 
   .createSharedEntry("vendor", [
     "bootstrap",
-    "bootstrap/less/bootstrap.less"
+    "./assets/less_bootstrap/bootstrap.less"
   ])
   // will create public/build/app.js and public/build/app.css
-  .addEntry("app", "./assets/js/app.js")
+  .addEntry("app", "./assets/javascripts/app.js")
 
   // allow legacy applications to use $/jQuery as a global variable
   .autoProvidejQuery()

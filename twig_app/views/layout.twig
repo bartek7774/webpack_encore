@@ -10,6 +10,9 @@
             - My Webpage</title>
     </head>
     <body>
+        <div id="navigation">
+            {% include "./partials/navbar.twig" %}
+        </div>
         <h2>Homepage</h2>
         <div id="content">
             {% block content %}{% endblock %}
