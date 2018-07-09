@@ -867,3 +867,29 @@
 @dl-horizontal-breakpoint:    @grid-float-breakpoint;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
+
+
+//=== Custom blue navbar
+// Reset blue navbar basics
+@navbar-blue-color:                      lighten(@gray-light, 25%);
+@navbar-blue-bg:                         rgb(9, 3, 92);
+@navbar-blue-border:                     darken(@navbar-blue-bg, 10%);
+
+// blue navbar links
+@navbar-blue-link-color:                 lighten(@gray-light, 15%);
+@navbar-blue-link-hover-color:           #fff;
+@navbar-blue-link-hover-bg:              lighten(@navbar-blue-bg,5%);
+@navbar-blue-link-active-color:          @navbar-blue-link-hover-color;
+@navbar-blue-link-active-bg:             darken(@navbar-blue-bg, 10%);
+@navbar-blue-link-disabled-color:        rgb(68, 68, 68);
+@navbar-blue-link-disabled-bg:           transparent;
+
+// blue navbar brand label
+@navbar-blue-brand-color:                @navbar-blue-link-color;
+@navbar-blue-brand-hover-color:          #fff;
+@navbar-blue-brand-hover-bg:             lighten(@navbar-blue-bg,8%);;
+
+// blue navbar toggle
+@navbar-blue-toggle-hover-bg:            lighten(@navbar-blue-bg,10%);
+@navbar-blue-toggle-icon-bar-bg:         #fff;
+@navbar-blue-toggle-border-color:        darken(@navbar-blue-bg,13%);
