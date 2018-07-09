@@ -12,31 +12,31 @@
 {% endblock %}
 {% block stylesheets %}
     {{parent()}}
-    <link rel="stylesheet" href='/build/app.css'>
+    {# <link rel="stylesheet" href='/build/base.css'> #}
 {% endblock stylesheets %}
 
 {% block content %}
 
-<!-- Standard button -->
-<button type="button" class="btn btn-default">Default</button>
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default">Default</button>
 
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button type="button" class="btn btn-primary">Primary</button>
 
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">Success</button>
 
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info">Info</button>
 
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-warning">Warning</button>
 
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
+    <!-- Indicates a dangerous or potentially negative action -->
+    <button type="button" class="btn btn-danger">Danger</button>
 
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
+    <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+    <button type="button" class="btn btn-link">Link</button>
 
     <p>Welcome to
         {{title}}</p>
@@ -57,12 +57,22 @@
             <li>{{ user.username|e }}</li>
         {% endfor %}
     </ul>
-
+    <ul>
+        <i class="fa fa-car"></i>
+        <i class="fa fa-car" style="font-size:48px;"></i>
+        <i class="fa fa-car" style="font-size:60px;color:red;"></i>
+    </ul>
     <p class="important">
         Welcome to my awesome homepage.
     </p>
 {% endblock %}
 {% block javascripts %}
     {{parent()}}
-    <script src="/build/app.js"></script>
+    <script src="/build/shortcut.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn-primary').gray();
+            $('.btn-primary').addClass('grayscale');
+        });
+    </script>
 {% endblock %}

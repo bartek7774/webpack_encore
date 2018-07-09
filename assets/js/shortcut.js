@@ -1,6 +1,6 @@
 // assets/js/app.js
 import '../less/app.less';
-import shortcut from './helpers/shortcut.js';
+import shortcut from './helpers/shortcut-core.js';
 
 $(document).ready(function(){
   let x=123;

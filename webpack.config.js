@@ -8,15 +8,9 @@ Encore
   // the public path used by the web server to access the previous directory
   .setPublicPath("/build")
 
-  .createSharedEntry("vendor", [
-    "bootstrap",
-    "./assets/less_bootstrap/bootstrap.less"
-  ])
-  // will create public/build/app.js and public/build/app.css
-  .addEntry("app", "./assets/javascripts/app.js")
-
-  // allow legacy applications to use $/jQuery as a global variable
-  .autoProvidejQuery()
+  // will create public/build/xxx.js and public/build/xxx.css
+  .addEntry("base", "./assets/js/base.js")
+  .addEntry("shortcut", "./assets/js/shortcut.js")
 
   // enable source maps during development
   .enableSourceMaps(!Encore.isProduction())

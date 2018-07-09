@@ -3,7 +3,9 @@
 <html>
     <head>
         {% block stylesheets %}
-            <link rel="stylesheet" href='/build/vendor.css'>
+            {# <link rel="stylesheet" href='/build/vendor.css'> #}
+            <link rel="stylesheet" href='/build/base.css'>
+            <link rel="stylesheet" href='https://npmcdn.com/jquery-gray@1.6.0/css/gray.min.css'>
         {% endblock stylesheets %}
         <title>
             {% block title %}{% endblock %}
@@ -23,8 +25,10 @@
         {% endblock %}
     </div>
     {% block javascripts %}
-        <script src="/build/manifest.js"></script>
-        <script src="/build/vendor.js"></script>
+        {# <script src="/build/manifest.js"></script> #}
+        {# <script src="/build/vendor.js"></script> #}
+        <script src="/build/base.js"></script>
+        <script src='https://npmcdn.com/jquery-gray@1.6.0/js/jquery.gray.min.js'></script>
     {% endblock javascripts %}
 </body>
 </html>
