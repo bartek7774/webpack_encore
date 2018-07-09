@@ -1,9 +1,19 @@
 // assets/js/app.js
-import '../less/app.less';
-import shortcut from './helpers/shortcut-core.js';
+import "../less/shortcut.less";
+import shortcut from "./helpers/shortcut-core.js";
 
-$(document).ready(function(){
-  let x=123;
-  console.log(`Hello form ${x}`);
-  shortcut(10,'description');
+$(document).ready(function() {
+  var down = $("<button/>", {
+    class: "btn btn-block btn-default infinite pulse animated button-square"
+  }).append(
+    $("<span/>").addClass("glyphicon glyphicon-chevron-down span-round-down")
+  );
+
+  var up = $("<button/>", {
+    class: "btn btn-block btn-default button-square"
+  }).append(
+    $("<span/>").addClass("glyphicon glyphicon-chevron-up span-round-up")
+  );
+
+  shortcut(20, "description", down, up);
 });

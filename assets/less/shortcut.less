@@ -1,0 +1,35 @@
+.center-positioned {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.button-relative {
+  position: relative;
+  outline: none !important;
+  height: 40px;
+  margin: 5px auto;
+}
+.button-round {
+  .button-relative();
+  width: 40px;
+  border-radius: 50%;
+}
+.span-round-down {
+  .center-positioned();
+  font-size: 20px;
+}
+.span-round-up {
+  .center-positioned();
+  font-size: 20px;
+}
+
+.button-square {
+  .button-relative();
+  width: 10%;
+  min-width: 40px;
+}
+.button-square span {
+  font-size: 22px;
+}
